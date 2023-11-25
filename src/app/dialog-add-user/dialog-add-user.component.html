@@ -1,0 +1,48 @@
+<mat-progress-bar *ngIf="loading" mode="indeterminate"></mat-progress-bar>
+<h1 mat-dialog-title color="primary">Add User</h1>
+<div class="add-user-dialog-container ml-16 mr-16">
+    <div class="d-flex">    
+        <mat-form-field class="mr-16" appearance="outline">
+            <mat-label>Firstname</mat-label>
+            <input [(ngModel)]="user.firstName" [disabled]="loading" matInput placeholder="Firstname">
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Lastname</mat-label>
+            <input [(ngModel)]="user.lastName" matInput placeholder="Lastname">
+        </mat-form-field>
+    </div>
+    <div>
+        <mat-form-field class="full-width" appearance="outline">
+            <mat-label>E-mail</mat-label>
+            <input [(ngModel)]="user.email" [disabled]="loading" matInput placeholder="E-mail">
+        </mat-form-field>
+    </div>
+    <div>
+        <mat-form-field class="full-width" appearance="outline">
+            <mat-label>Birth Date</mat-label>
+            <input [(ngModel)]="birthDate" [disabled]="loading" matInput placeholder="Birth date" [matDatepicker]="datepicker">
+            <mat-datepicker-toggle matIconSuffix [for]="datepicker"></mat-datepicker-toggle>
+            <mat-datepicker #datepicker></mat-datepicker>
+        </mat-form-field>
+    </div>
+    <div>
+        <mat-form-field class="full-width" appearance="outline">
+            <mat-label>Street + House No.</mat-label>
+            <input [(ngModel)]="user.street" [disabled]="loading" matInput placeholder="Street + House No.">
+        </mat-form-field>
+    </div>
+    <div class="d-flex">
+        <mat-form-field class="mr-16" appearance="outline">
+            <mat-label>Zip Code</mat-label>
+            <input [(ngModel)]="user.zipCode" [disabled]="loading" matInput placeholder="Zip code">
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>City</mat-label>
+            <input [(ngModel)]="user.city" [disabled]="loading" matInput placeholder="City">
+        </mat-form-field>
+    </div>
+    <div class="d-flex" mat-dialog-actions>
+        <button [disabled]="loading" color="warning" (click)="this.dialogRef.close();" size="small" mat-raised-button>Close</button>
+        <button [disabled]="loading" color="primary" cdkFocusInitial (click)="saveUser()" mat-raised-button>Save</button>
+    </div>
+</div>

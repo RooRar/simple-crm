@@ -1,0 +1,68 @@
+<div class="container">
+    <mat-card class="user-detail-header zoomindown animation-duration-200 animation-iteration-1">
+        <button mat-icon-button [matMenuTriggerFor]="userMenu" class="pin-right-upper-corner smallbutton">
+            <mat-icon>more_vert</mat-icon>
+        </button>
+
+        <mat-menu #userMenu="matMenu">
+            <button mat-menu-item (click)="editUserProperties()"><mat-icon>manage_accounts</mat-icon>Edit</button>
+        </mat-menu>
+
+        <div class="userDetailsContainer w-full">
+            <mat-card-content>
+                <p-fieldset>
+                    <ng-template pTemplate="header">
+                        <div class="flex align-items-center text-primary">
+                            <span class="pi pi-user mr-2"></span>
+                            <span class="font-bold text-lg">User Details</span>
+                        </div>
+                    </ng-template>
+                    <div class="flex">
+                        <img src="./assets/img/profile1.png">
+                        <div class="align-self-end">
+                            <h2>{{user.firstName}} {{user.lastName}}</h2>
+                            <h3>{{user.email}}</h3>
+                        </div>       
+                    </div>        
+                </p-fieldset>
+            </mat-card-content>
+        </div>
+    </mat-card>
+    <mat-card class="zoomindown animation-duration-200 animation-delay-200 animation-iteration-1 animation-fill-backwards mt-3">
+        <button mat-icon-button [matMenuTriggerFor]="addressMenu" class="pin-right-upper-corner smallbutton">
+            <mat-icon>more_vert</mat-icon>
+        </button>
+        
+        <mat-menu #addressMenu="matMenu">
+            <button mat-menu-item (click)="editUserAddress()"><mat-icon>home</mat-icon>Edit</button>
+        </mat-menu>
+
+        <div class="userAdressContainer">
+        <mat-card-content>
+            <p-fieldset>
+                <ng-template pTemplate="header">
+                    <div class="flex align-items-center text-primary">
+                        <span class="pi pi-user mr-2"></span>
+                        <span class="font-bold text-lg">User Address</span>
+                    </div>
+                </ng-template>
+                {{user.street}}<br>
+                {{user.zipCode}} {{user.city}}
+            </p-fieldset>
+        </mat-card-content>
+    </div>
+    </mat-card>
+    <mat-card class="zoomindown animation-duration-200 animation-delay-300 animation-iteration-1 animation-fill-backwards mt-3 align-items-end ">
+        <mat-card-header>
+            <mat-card-title></mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <button class="backButton" [mtxTooltip]="tooltipGoBack" mat-raised-button color="warn" [routerLink]="['/user']"><mat-icon>arrow_back</mat-icon></button>                
+        </mat-card-content>
+    </mat-card>
+</div>
+
+<ng-template #tooltipGoBack>
+    <div>Go back to Userlist</div>
+</ng-template>
+  

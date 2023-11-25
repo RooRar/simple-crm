@@ -1,0 +1,37 @@
+.container {
+    opacity: 0.9;
+    max-width: 985px;
+    margin: 15px;
+}
+
+.add-user-btn {
+    width: 40px;
+    height: 40px;
+}
+
+:host ::ng-deep tr {
+    &:hover {
+        background-color:lightgrey;
+        cursor: pointer;
+    }
+}
+
+:host ::ng-deep .mat-header-row {
+    &:hover {
+        background-color:none !important;
+        cursor: none !important;
+    }
+}
+
+:host ::ng-deep .mat-mdc-paginator-container{
+    cursor: move;
+}
+
+:host ::ng-deep .mtx-grid-toolbar {
+    background-color: lightgrey;
+    cursor: move;
+}
+
+mat-table {
+    width: unset !important;
+}

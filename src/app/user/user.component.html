@@ -1,0 +1,35 @@
+<div class="container">
+  <mat-card class="fadein animation-duration-500" cdkDrag cdkDragBoundary=".router-container">
+    <mtx-grid
+    [data]="allUsers"
+    [rowHover]="hover" 
+    [loading]="isLoading"
+    [rowStriped]="true"
+    [rowSelectable]="false"
+    [showToolbar]="true"
+    [columns]="columns"
+    [columnResizable]="true"
+    [trackBy]="trackByName"
+    [pageSizeOptions]="[5,10,20]"
+    [pageSize]="5"
+    [toolbarTemplate]="toolbarTableTop"
+    [columnHideable]="true"
+    [columnHideableChecked]="columnHideableChecked"
+    [columnSortable]="true"
+    [columnPinnable]="true"
+    [columnResizable]="true"    
+    (rowClick)="verNotificacion($event)"/>
+  </mat-card>
+</div>
+
+<ng-template #toolbarTableTop>
+  <div class="tableToolbar">
+    <button [mtxTooltip]="tooltipAddUser" (click)="openDialog()" matTooltip="Add user" class="add-user-btn" mat-fab color="lightgrey">
+      <mat-icon>add</mat-icon>
+    </button>  
+  </div>
+</ng-template>
+
+<ng-template #tooltipAddUser>
+  <div>Add new User</div>
+</ng-template>

@@ -1,0 +1,145 @@
+mat-drawer-container {
+    background-color: unset;
+}
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow: hidden;
+}
+.sidenav {
+    height: 100vh;
+
+}
+.nav-content {
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   height: calc(100% - 92px);
+   margin-top: 20px;
+}
+
+.mat-drawer-container {
+    // height: 100vh;
+}
+
+.menu-icon {
+    cursor: pointer;
+    margin-right: 16px;
+}
+
+.nav-items {
+    list-style-type: none;
+    padding: 0px;
+    margin: 0px;
+
+    li {
+        padding-left: 16px;
+        padding-right: 16px;
+        height: 48px;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+
+        mat-icon {
+            margin-right: 16px;
+        }
+
+        &:hover {
+            background-color: rgba(0,0,0,0.05);
+        }
+
+        &:focus {
+            outline: none;
+        }
+    }
+}
+
+.nav-items-collapsed {
+    color:white;
+
+    li {
+        mat-item {
+            margin-right: 0;        
+        }    
+    }
+}
+
+.router-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow-y: auto;  
+}
+
+.logo-container {
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    height: 45px;
+    padding-top: 35px;
+    padding-left: 10px;
+    padding-bottom: 30px;
+    padding-right: 10px;
+    display: flex;
+    align-items: center;
+    img {
+        object-fit: contain;
+    }
+}
+
+.bottom-nav {
+    display: none;
+
+}
+
+.bottom-nav-section {
+    display: flex;
+    gap: 16px;
+
+    mat-icon {
+        cursor: pointer;
+    }
+}
+
+.mat-row{
+    height: 10px !important;
+}
+
+@media (max-width: 820px) {
+        
+    .sidenav {
+      display: none;
+    }
+
+    .bottom-nav {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .header-nav {
+        mat-icon{
+            display: none;
+        }
+        mat-toolbar-row {
+            justify-content: center;
+        }
+    }
+
+    .logo-container {
+        filter: invert(96%) sepia(3%) saturate(56%) hue-rotate(136deg) brightness(117%) contrast(100%);
+
+        img {
+            height:45px;
+        }
+    }
+  }
+
+  @media (max-width: 500px) { 
+    .logo-container {
+        filter: invert(96%) sepia(3%) saturate(56%) hue-rotate(136deg) brightness(117%) contrast(100%);
+
+        img {
+            height:35px;
+        }
+    }
+  }

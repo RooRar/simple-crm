@@ -1,0 +1,50 @@
+.container {
+    display: flex;
+  //  max-width: 500px;
+    opacity: 0.9;
+    margin: 20px;
+    align-items: flex-start;
+    align-items: center;
+    gap: 16px;
+}
+
+.content {
+    background-color: white;
+    border-radius: 5px;
+}
+
+.card {
+    p-chart {
+        height: 250px;
+        display: flex;
+    }    
+}
+
+.headline {
+    background-color: lightgray;
+    text-align: center;
+    cursor: move;
+
+    h1 {
+        line-height: 2;
+    }
+}
+
+canvas {
+    width: 100% !important;
+    height: 100% !important;
+  }
+
+@media (max-width: 620px) {
+    .container{
+        flex-wrap: wrap;
+
+    }
+}
+
+// @media (max-height: 700px) {
+//     .container{
+//         transform: scale(0.8);
+
+//     }
+// }

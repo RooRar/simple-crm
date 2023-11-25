@@ -1,0 +1,19 @@
+<div class="container">
+    <div class="content fadein animation-duration-500" cdkDrag cdkDragBoundary=".router-container">
+        <div class="card">
+            <div class="headline">
+                <h1>Sales</h1>
+            </div>
+        <p-chart type="bar" [data]="basicData" [options]="basicOptions"></p-chart>
+        </div>
+    </div>
+    
+    <div class="content fadein animation-duration-500" cdkDrag cdkDragBoundary=".router-container">
+        <div class="card">
+            <div class="headline">
+                <h1>Products</h1>
+            </div>
+            <p-chart type="line" [data]="data" [responsive]="true" [options]="options"></p-chart>
+        </div>
+    </div>
+</div>
